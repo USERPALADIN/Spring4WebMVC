@@ -9,6 +9,8 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.PropertySource;
 import org.springframework.core.env.Environment;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
+import org.springframework.instrument.classloading.InstrumentationLoadTimeWeaver;
+import org.springframework.instrument.classloading.LoadTimeWeaver;
 import org.springframework.orm.jpa.JpaTransactionManager;
 import org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean;
 import org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter;
@@ -41,7 +43,8 @@ public class DatabaseConfig {
         em.setPackagesToScan(env.getRequiredProperty("db.entity.package"));
         em.setJpaVendorAdapter(new HibernateJpaVendorAdapter());
         em.setJpaProperties(getHibernateProperties());
-
+        LoadTimeWeaver loadTimeWeaver = new InstrumentationLoadTimeWeaver();
+        em.setLoadTimeWeaver(loadTimeWeaver);
         return em;
     }
 
