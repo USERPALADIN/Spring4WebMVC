@@ -1,14 +1,11 @@
 package com.mitya.controller;
 
 import com.mitya.entity.User;
-import com.mitya.dao.UserDao;
 import com.mitya.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 
 @Controller
 @RequestMapping("/admin")
@@ -27,7 +24,7 @@ public class AdminController {
         return "addUser";
     }
 
-    @RequestMapping(value = "insert_user", method = RequestMethod.POST)
+    @RequestMapping(value = "/insert_user", method = RequestMethod.POST)
     public String insertPost(@RequestParam("name") String name,
                              @RequestParam("login") String login, @RequestParam("password") String password) {
         String role = "user";
@@ -35,14 +32,14 @@ public class AdminController {
         return "redirect:/admin/users_all";
     }
 
-    @RequestMapping(value = "/delete_user", method = RequestMethod.GET)
-    public String deleteGer(@RequestParam("userId") long id) {
+    @RequestMapping(value = "/delete_user/{userId}", method = RequestMethod.GET)
+    public String deleteGer(@PathVariable("userId") long id) {
         userService.delete(id);
         return "redirect:/admin/users_all";
     }
 
-    @RequestMapping(value = "/update_user", method = RequestMethod.GET)
-    public String updateGet(@RequestParam("userId") long id, Model model) {
+    @RequestMapping(value = "/update_user/{userId}", method = RequestMethod.GET)
+    public String updateGet(@PathVariable("userId") long id, Model model) {
         User user = userService.getById(id);
         model.addAttribute("user", user);
 
@@ -55,7 +52,6 @@ public class AdminController {
         User user2 = new User(name, login, password, role);
         user2.setId(id);
         userService.update(user2);
-
         return "redirect:/admin/users_all";
     }
 }

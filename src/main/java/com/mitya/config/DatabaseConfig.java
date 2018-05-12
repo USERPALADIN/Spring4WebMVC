@@ -29,7 +29,6 @@ import java.util.Properties;
 @EnableTransactionManagement
 @PropertySource("classpath:db.properties")
 @ComponentScan("com.mitya")
-
 public class DatabaseConfig {
 
 

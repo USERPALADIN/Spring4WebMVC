@@ -1,7 +1,7 @@
 <component name="ArtifactManager">
   <artifact type="war" name="Spring4WebMVC:war">
     <output-path>$PROJECT_DIR$/target</output-path>
-    <root id="archive" name="CRUD-server.war">
+    <root id="archive" name="Spring4WebMVC-1.0-SNAPSHOT.war">
       <element id="artifact" artifact-name="Spring4WebMVC:war exploded" />
     </root>
   </artifact>

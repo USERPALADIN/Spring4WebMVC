@@ -1,21 +1,20 @@
 package com.mitya.config;
 
 import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.web.servlet.config.annotation.EnableWebMvc;
+import org.springframework.web.servlet.config.annotation.ViewControllerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
-import org.springframework.web.servlet.view.InternalResourceViewResolver;
 
-@Configuration
-@EnableWebMvc
-@ComponentScan ("com.mitya")
-public class WebConfig extends WebMvcConfigurerAdapter {
-    @Bean
-    public InternalResourceViewResolver resolver(){
-        InternalResourceViewResolver resolver  = new InternalResourceViewResolver();
-        resolver.setPrefix("/");
-        resolver.setSuffix(".jsp");
-        return  resolver;
-    }
-}
+//@Configuration
+
+//public class WebConfig extends WebMvcConfigurerAdapter {
+//
+//    public void addViewControllers(ViewControllerRegistry registry) {
+//        registry.addViewController("/login").setViewName("login");
+//    }
+//////    @Bean
+////    public UserDetailsService getUserDetailsService(){
+////        return new UserDetailsServiceImpl();
+////    }
+//}
+

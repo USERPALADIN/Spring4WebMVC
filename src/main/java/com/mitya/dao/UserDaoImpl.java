@@ -6,6 +6,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import javax.persistence.*;
 import java.util.List;
+
 @Repository
 @Transactional(readOnly = false)
 public class UserDaoImpl implements UserDao {
@@ -34,8 +35,14 @@ public class UserDaoImpl implements UserDao {
     }
 
     @Override
-    public User getById(long  id) {
+    public User getById(long id) {
         User user = entityManager.find(User.class, id);
         return user;
+    }
+
+    @Override
+    public List<User> getByLogin(String login) {
+        List<User> users = entityManager.createQuery("SELECT e FROM User e  WHERE login ='" + login + "'").getResultList();
+        return users;
     }
 }

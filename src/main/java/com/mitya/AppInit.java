@@ -1,26 +1,23 @@
 package com.mitya;
 
-import com.mitya.config.WebConfig;
-import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.builder.SpringApplicationBuilder;
+import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.ComponentScan;
 
-public class AppInit extends AbstractAnnotationConfigDispatcherServletInitializer {
-    @Override
-    protected Class<?>[] getRootConfigClasses() {
-        return new Class<?>[]{WebConfig.class};
+
+@SpringBootApplication
+@ComponentScan("com.mitya")
+public class AppInit extends  SpringBootServletInitializer {
+
+    public static void main(String[] args) throws Throwable {
+        SpringApplication.run(AppInit.class, args);
     }
 
-    @Override
-    protected Class<?>[] getServletConfigClasses() {
-
-        return new Class<?>[]{WebConfig.class};
-
-    }
-    @Override
-
-    protected String[] getServletMappings() {
-
-        return new String[]{"/"};
-
-    }
-
+//    @Override
+//    protected SpringApplicationBuilder configure(SpringApplicationBuilder builder) {
+//        return  builder.sources(AppInit.class);
+//    }
 }
