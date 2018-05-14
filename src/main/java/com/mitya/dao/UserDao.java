@@ -1,6 +1,6 @@
 package com.mitya.dao;
 
-import com.mitya.entity.User;
+import com.mitya.model.User;
 
 import java.util.List;
 

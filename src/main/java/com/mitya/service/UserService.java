@@ -1,9 +1,8 @@
 package com.mitya.service;
 
 import com.mitya.dao.UserDao;
-import com.mitya.entity.User;
+import com.mitya.model.User;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Repository;
 import org.springframework.stereotype.Service;
 //import org.springframework.transaction.annotation.Transactional;
 

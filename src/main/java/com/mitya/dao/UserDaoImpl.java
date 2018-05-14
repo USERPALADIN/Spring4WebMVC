@@ -1,6 +1,6 @@
 package com.mitya.dao;
 
-import com.mitya.entity.User;
+import com.mitya.model.User;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 

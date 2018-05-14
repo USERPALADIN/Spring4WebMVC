@@ -1,40 +1,39 @@
 package com.mitya.service;
 
 import com.mitya.dao.UserDao;
-import com.mitya.dao.UserDaoImpl;
-import com.mitya.entity.User;
+
+import com.mitya.model.User;
 import org.springframework.beans.factory.annotation.Autowired;
 
+import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
+import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.core.userdetails.UserDetailsService;
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import java.util.HashSet;
-import java.util.Set;
+import java.util.Arrays;
+import java.util.List;
 
 //@Service
-//    public class UserDetailsServiceImpl implements UserDetailsService {
+//public class UserDetailsServiceImpl implements UserDetailsService {
 //    @Autowired
 //    UserDao userDao;
 //
 //    @Override
 //    @Transactional
 //    public UserDetails loadUserByUsername(String login) throws UsernameNotFoundException {
-//// с помощью нашего сервиса UserService получаем User
-//        User user = userDao.getByLogin(login);
-//        // указываем роли для этого пользователя
-//
-////        Set<GrantedAuthority> roles = new HashSet();
-////            roles.add(new SimpleGrantedAuthority(user.getRole()));
-//
-//
-//        // на основании полученныйх даных формируем объект UserDetails
-//        // который позволит проверить введеный пользователем логин и пароль
-//        // и уже потом аутентифицировать пользователя
-////        UserDetails userDetails =
-////                new org.springframework.security.core.userdetails.User(user.getLogin(),
-////                        user.getPassword(),
-////                        roles);
-//
-//        return (UserDetails) user;
+//        User user = null;
+//        List<User> users = userDao.getByLogin(login);
+//        user = users.get(0);
+//        if (user == null) {
+//            throw new UsernameNotFoundException("User" + login + " not found");
+//        }
+//        //   UserDetails userDetails = (UserDetails) new User(user.getName(), user.getLogin(), user.getPassword(), user.getRole());
+//        GrantedAuthority authority = new SimpleGrantedAuthority(user.getRole());
+//        UserDetails userDetails = (UserDetails) new org.springframework.security.core.userdetails.User
+//                (user.getLogin(), user.getPassword(), Arrays.asList(authority));
+//        return userDetails;
 //    }
 //}

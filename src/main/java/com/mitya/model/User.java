@@ -1,4 +1,4 @@
-package com.mitya.entity;
+package com.mitya.model;
 
 import javax.persistence.*;
 

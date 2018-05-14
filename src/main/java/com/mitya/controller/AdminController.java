@@ -1,6 +1,6 @@
 package com.mitya.controller;
 
-import com.mitya.entity.User;
+import com.mitya.model.User;
 import com.mitya.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -19,18 +19,7 @@ public class AdminController {
         return "users_all";
     }
 
-    @RequestMapping(value = "/insert_user", method = RequestMethod.GET)
-    public String insertGet(Model model) {
-        return "addUser";
-    }
 
-    @RequestMapping(value = "/insert_user", method = RequestMethod.POST)
-    public String insertPost(@RequestParam("name") String name,
-                             @RequestParam("login") String login, @RequestParam("password") String password) {
-        String role = "user";
-        userService.insert(new User(name, login, password, role));
-        return "redirect:/admin/users_all";
-    }
 
     @RequestMapping(value = "/delete_user/{userId}", method = RequestMethod.GET)
     public String deleteGer(@PathVariable("userId") long id) {

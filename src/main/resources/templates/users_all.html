@@ -41,13 +41,9 @@
     </tr>
     </tbody>
 </table>
-<div><a href="/admin/insert_user">New User</a> </div>
-<!--</table>-->
-    <!--<div>-->
-    <!--<form action="/logout" method="post">-->
-    <!--<input type="submit" value="Sign Out"/>-->
-    <!--</form>-->
-    <!--</div>-->
-    <!--<a href="/admin/insert_user">Sign in</a>-->
+
+<form th:action="@{/logout}" method="post">
+    <input type="submit" value="Sign Out"/>
+</form>
 </body>
 </html>
