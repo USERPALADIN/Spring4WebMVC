@@ -18,8 +18,15 @@ public class SimpleController {
 
     @RequestMapping(value = "/hello_user", method = RequestMethod.GET)
     String helloGet(Model model) {
-       return  "hello";
+        return "hello";
     }
+
+    @RequestMapping(value = "/login", method = RequestMethod.GET)
+    String loginGet() {
+        return "login";
+    }
+
+
     @RequestMapping(value = "/insert_user", method = RequestMethod.GET)
     public String insertGet(Model model) {
         return "addUser";
@@ -27,7 +34,7 @@ public class SimpleController {
 
     @RequestMapping(value = "/insert_user", method = RequestMethod.POST)
     public String insertPost(@RequestParam("name") String name,
-                              @RequestParam("login") String login, @RequestParam("password") String password) {
+                             @RequestParam("login") String login, @RequestParam("password") String password) {
         String role = "user";
         userService.insert(new User(name, login, password, role));
         return "login";
