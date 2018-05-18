@@ -15,5 +15,6 @@ public interface UserDao   // extends JpaRepository<User, Long>
     List getAll();
 
     User getById(long id);
-    List<User> getByLogin (String login);
+    User getByLogin (String login);
+
 }

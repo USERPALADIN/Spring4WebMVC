@@ -38,9 +38,9 @@ public class AdminController {
     @RequestMapping(value = "/update_user", method = RequestMethod.POST)
     public String updatePost(@RequestParam("userId") long id, @RequestParam("name") String name,
                              @RequestParam("login") String login, @RequestParam("password") String password, @RequestParam("role") String role) {
-        User user2 = new User(name, login, password, role);
-        user2.setId(id);
-        userService.update(user2);
+//        User user2 = new User(name, login, password, role);
+//        user2.setId(id);
+//        userService.update(user2);
         return "redirect:/admin/users_all";
     }
 }

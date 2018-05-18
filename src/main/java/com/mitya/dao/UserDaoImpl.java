@@ -1,17 +1,26 @@
 package com.mitya.dao;
 
 import com.mitya.model.User;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.ComponentScan;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
-import javax.persistence.*;
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
 import java.util.List;
 
 @Repository
 @Transactional(readOnly = false)
+@ComponentScan("com.mitya")
 public class UserDaoImpl implements UserDao {
     @PersistenceContext
     private EntityManager entityManager;
+    @Autowired
+    private PasswordEncoder passwordEncoder;
 
     @Override
     public void delete(long id) {
@@ -21,6 +30,7 @@ public class UserDaoImpl implements UserDao {
 
     @Override
     public void insert(User user) {
+        user.setPassword(passwordEncoder.encode(user.getPassword()));
         entityManager.persist(user);
     }
 
@@ -41,8 +51,10 @@ public class UserDaoImpl implements UserDao {
     }
 
     @Override
-    public List<User> getByLogin(String login) {
+    public User getByLogin(String login) {
         List<User> users = entityManager.createQuery("SELECT e FROM User e  WHERE login ='" + login + "'").getResultList();
-        return users;
+
+        return users.get(0);
     }
+
 }

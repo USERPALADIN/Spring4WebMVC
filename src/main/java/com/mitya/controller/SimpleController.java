@@ -1,13 +1,12 @@
 package com.mitya.controller;
 
-import com.mitya.model.User;
 import com.mitya.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.*;
-
-import java.util.List;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
 
@@ -16,7 +15,7 @@ public class SimpleController {
     private UserService userService;
 
 
-    @RequestMapping(value = "/hello_user", method = RequestMethod.GET)
+    @RequestMapping(value = "/user", method = RequestMethod.GET)
     String helloGet(Model model) {
         return "hello";
     }
@@ -35,8 +34,12 @@ public class SimpleController {
     @RequestMapping(value = "/insert_user", method = RequestMethod.POST)
     public String insertPost(@RequestParam("name") String name,
                              @RequestParam("login") String login, @RequestParam("password") String password) {
-        String role = "user";
-        userService.insert(new User(name, login, password, role));
+//        String role = "ROLE_USER";
+//        Role userRole = new Role(user,role);
+//        User user = new User(name, login, password);
+//        Role userRole = new Role(user,role);
+//
+//        userService.insert();
         return "login";
     }
 //    @RequestMapping(value = "/log", method = RequestMethod.POST)

@@ -4,14 +4,16 @@ import com.mitya.dao.UserDao;
 import com.mitya.model.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-//import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
+
+//import org.springframework.transaction.annotation.Transactional;
 
 @Service
 public class UserService {
     @Autowired
     private UserDao userDao;
+
 
     public void delete(long id) {
         userDao.delete(id);
@@ -37,8 +39,8 @@ public class UserService {
         return user;
     }
 
-    public List<User> getByLogin(String login) {
-        List<User> user = userDao.getByLogin(login);
+    public User getByLogin(String login) {
+        User user = userDao.getByLogin(login);
         return user;
     }
 }
