@@ -30,13 +30,14 @@
                                   th:value="${user.password}"/> <br/></td>
         </tr>
         <tr>
-            <td>
-
-                Role : <select type="text" name="role">
-                <!--<option><c:out value="${user.role}"/></option>-->
-                <option>ROLE_USER</option>
-                <option>ROLE_ADMIN</option>
+            <td th:each="role : ${user.roles}">
+                Role: <select name="role" th:text="${role.getName()}">
             </select>
+                <!--Role : <select type="text" name="role">-->
+                <!--&lt;!&ndash;<option><c:out value="${user.role}"/></option>&ndash;&gt;-->
+                <!--<option>th:text="${role.getName()}"</option>-->
+                <!--<option>ROLE_ADMIN</option>-->
+                <!--</select>-->
             </td>
         </tr>
     </table>

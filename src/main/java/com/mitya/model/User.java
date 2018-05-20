@@ -1,11 +1,14 @@
 package com.mitya.model;
 
+import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.userdetails.UserDetails;
+
 import javax.persistence.*;
 import java.util.Collection;
 
 @Entity
 @Table(name = "user")
-public class User {
+public class User  implements UserDetails{
 
     @Id
     @Column(name = "id")
@@ -18,7 +21,7 @@ public class User {
     private String login;
     @Column(name = "password")
     private String password;
-    @ManyToMany
+    @ManyToMany (cascade = {CascadeType.ALL, CascadeType.REMOVE}, fetch = FetchType.EAGER)
     @JoinTable(
             name = "users_roles",
             joinColumns = @JoinColumn(
@@ -63,11 +66,40 @@ public class User {
         return login;
     }
 
+    public Collection<Role> getRoles() {
+        return roles;
+    }
+    @Override
+    public Collection<? extends GrantedAuthority> getAuthorities() {
+        return roles;
+    }
+
     public String getPassword() {
         return password;
     }
 
-    public Collection<Role> getRoles() {
-        return roles;
+    @Override
+    public String getUsername() {
+        return login;
+    }
+
+    @Override
+    public boolean isAccountNonExpired() {
+        return true;
+    }
+
+    @Override
+    public boolean isAccountNonLocked() {
+        return true;
+    }
+
+    @Override
+    public boolean isCredentialsNonExpired() {
+        return true;
+    }
+
+    @Override
+    public boolean isEnabled() {
+        return true;
     }
 }

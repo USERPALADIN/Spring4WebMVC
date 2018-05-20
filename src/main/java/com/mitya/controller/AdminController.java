@@ -1,5 +1,6 @@
 package com.mitya.controller;
 
+import com.mitya.dao.RoleDao;
 import com.mitya.model.User;
 import com.mitya.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,6 +13,8 @@ import org.springframework.web.bind.annotation.*;
 public class AdminController {
     @Autowired
     private UserService userService;
+    @Autowired
+    private RoleDao roleDao;
 
     @RequestMapping(value = "/users_all", method = RequestMethod.GET)
     public String showUsers(Model model) {
@@ -38,6 +41,7 @@ public class AdminController {
     @RequestMapping(value = "/update_user", method = RequestMethod.POST)
     public String updatePost(@RequestParam("userId") long id, @RequestParam("name") String name,
                              @RequestParam("login") String login, @RequestParam("password") String password, @RequestParam("role") String role) {
+
 //        User user2 = new User(name, login, password, role);
 //        user2.setId(id);
 //        userService.update(user2);

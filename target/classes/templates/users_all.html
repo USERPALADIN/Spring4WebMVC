@@ -35,7 +35,7 @@
         <td th:text="${user.name}">Name</td>
         <td th:text="${user.login}">Login</td>
         <td th:text="${user.password}">Password</td>
-        <td th:text="${user.role}">Role</td>
+        <td th:each="role : ${user.roles}" th:text="${role.getName()}">Role</td>
         <td><a th:href="@{/admin/update_user/{userId}(userId=${user.id})}"><span>Update</span></a></td>
         <td><a th:href="@{/admin/delete_user/{userId} (userId =${user.id})}"><span>Delete</span></a></td>
     </tr>
