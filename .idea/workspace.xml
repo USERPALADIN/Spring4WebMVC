@@ -7,48 +7,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cbc23fa1-7fc1-43ff-9132-cff16bb44116" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/mitya/dao/RoleDao.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/mitya/dao/RoleDaoImpl.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/mitya/service/RoleService.java" />
       <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/3ac03422-b8ac-4b46-b5de-257c178af7fc.xml" afterPath="$PROJECT_DIR$/.idea/dataSources/3ac03422-b8ac-4b46-b5de-257c178af7fc.xml" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/mitya/AppInit.java" afterPath="$PROJECT_DIR$/src/main/java/com/mitya/AppInit.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/mitya/controller/AdminController.java" afterPath="$PROJECT_DIR$/src/main/java/com/mitya/controller/AdminController.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/mitya/controller/SimpleController.java" afterPath="$PROJECT_DIR$/src/main/java/com/mitya/controller/SimpleController.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/mitya/dao/UserDaoImpl.java" afterPath="$PROJECT_DIR$/src/main/java/com/mitya/dao/UserDaoImpl.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/mitya/model/Privilege.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/mitya/model/Role.java" afterPath="$PROJECT_DIR$/src/main/java/com/mitya/model/Role.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/mitya/model/User.java" afterPath="$PROJECT_DIR$/src/main/java/com/mitya/model/User.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/mitya/service/UserDetailsServiceImpl.java" afterPath="$PROJECT_DIR$/src/main/java/com/mitya/service/UserDetailsServiceImpl.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/addUser.html" afterPath="$PROJECT_DIR$/src/main/resources/templates/addUser.html" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/hello.html" afterPath="$PROJECT_DIR$/src/main/resources/templates/hello.html" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/update.html" afterPath="$PROJECT_DIR$/src/main/resources/templates/update.html" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/users_all.html" afterPath="$PROJECT_DIR$/src/main/resources/templates/users_all.html" />
-      <change beforePath="$PROJECT_DIR$/target/Spring4WebMVC-1.0-SNAPSHOT/META-INF/MANIFEST.MF" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/Spring4WebMVC-1.0-SNAPSHOT/WEB-INF/classes/com/mitya/AppInit.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/Spring4WebMVC-1.0-SNAPSHOT/WEB-INF/classes/com/mitya/config/DatabaseConfig.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/Spring4WebMVC-1.0-SNAPSHOT/WEB-INF/classes/com/mitya/controller/AdminController.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/Spring4WebMVC-1.0-SNAPSHOT/WEB-INF/classes/com/mitya/entity/User.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/Spring4WebMVC-1.0-SNAPSHOT/WEB-INF/classes/com/mitya/exception/DbException.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/Spring4WebMVC-1.0-SNAPSHOT/WEB-INF/classes/db.properties" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/Spring4WebMVC-1.0-SNAPSHOT/WEB-INF/classes/hibernate.properties" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/Spring4WebMVC-1.0-SNAPSHOT/WEB-INF/lib/antlr-2.7.7.jar" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/Spring4WebMVC-1.0-SNAPSHOT/WEB-INF/lib/commons-dbcp2-2.1.1.jar" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/Spring4WebMVC-1.0-SNAPSHOT/WEB-INF/lib/dom4j-1.6.1.jar" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/Spring4WebMVC-1.0-SNAPSHOT/WEB-INF/lib/geronimo-jta_1.1_spec-1.1.1.jar" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/Spring4WebMVC-1.0-SNAPSHOT/WEB-INF/lib/hibernate-commons-annotations-5.0.0.Final.jar" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/Spring4WebMVC-1.0-SNAPSHOT/WEB-INF/lib/hibernate-core-5.0.2.Final.jar" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/Spring4WebMVC-1.0-SNAPSHOT/WEB-INF/lib/hibernate-entitymanager-5.0.2.Final.jar" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/Spring4WebMVC-1.0-SNAPSHOT/WEB-INF/lib/hibernate-jpa-2.1-api-1.0.0.Final.jar" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/Spring4WebMVC-1.0-SNAPSHOT/WEB-INF/lib/jandex-1.2.2.Final.jar" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/Spring4WebMVC-1.0-SNAPSHOT/WEB-INF/lib/javassist-3.18.1-GA.jar" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/Spring4WebMVC-1.0-SNAPSHOT/WEB-INF/lib/javax.servlet-api-3.1.0.jar" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/Spring4WebMVC-1.0-SNAPSHOT/WEB-INF/lib/jstl-1.2.jar" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/Spring4WebMVC-1.0-SNAPSHOT/WEB-INF/lib/jta-1.1.jar" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/Spring4WebMVC-1.0-SNAPSHOT/WEB-INF/lib/mysql-connector-java-5.1.35.jar" afterPath="" />
       <change beforePath="$PROJECT_DIR$/target/classes/application.properties" afterPath="$PROJECT_DIR$/target/classes/application.properties" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/mitya/AppInit.class" afterPath="$PROJECT_DIR$/target/classes/com/mitya/AppInit.class" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/mitya/config/WebSecurityConfig.class" afterPath="$PROJECT_DIR$/target/classes/com/mitya/config/WebSecurityConfig.class" />
@@ -61,11 +21,8 @@
       <change beforePath="$PROJECT_DIR$/target/classes/com/mitya/model/User.class" afterPath="$PROJECT_DIR$/target/classes/com/mitya/model/User.class" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/mitya/service/UserDetailsServiceImpl.class" afterPath="$PROJECT_DIR$/target/classes/com/mitya/service/UserDetailsServiceImpl.class" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/mitya/service/UserService.class" afterPath="$PROJECT_DIR$/target/classes/com/mitya/service/UserService.class" />
-      <change beforePath="$PROJECT_DIR$/target/classes/db.properties" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/hibernate.properties" afterPath="" />
       <change beforePath="$PROJECT_DIR$/target/classes/templates/addUser.html" afterPath="$PROJECT_DIR$/target/classes/templates/addUser.html" />
       <change beforePath="$PROJECT_DIR$/target/classes/templates/hello.html" afterPath="$PROJECT_DIR$/target/classes/templates/hello.html" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/home.html" afterPath="" />
       <change beforePath="$PROJECT_DIR$/target/classes/templates/update.html" afterPath="$PROJECT_DIR$/target/classes/templates/update.html" />
       <change beforePath="$PROJECT_DIR$/target/classes/templates/users_all.html" afterPath="$PROJECT_DIR$/target/classes/templates/users_all.html" />
     </list>
@@ -121,51 +78,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="update.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/templates/update.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="578">
-              <caret line="34" column="21" lean-forward="false" selection-start-line="34" selection-start-column="21" selection-end-line="34" selection-end-column="21" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="User.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/mitya/model/User.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="323">
-              <caret line="23" column="63" lean-forward="false" selection-start-line="23" selection-start-column="63" selection-end-line="23" selection-end-column="63" />
-              <folding>
-                <element signature="e#1385#1386#0" expanded="true" />
-                <element signature="e#1425#1426#0" expanded="true" />
-                <element signature="e#1748#1749#0" expanded="true" />
-                <element signature="e#1776#1777#0" expanded="true" />
-                <element signature="e#1891#1892#0" expanded="true" />
-                <element signature="e#1919#1920#0" expanded="true" />
-                <element signature="e#1977#1978#0" expanded="true" />
-                <element signature="e#2004#2005#0" expanded="true" />
-                <element signature="e#2061#2062#0" expanded="true" />
-                <element signature="e#2088#2089#0" expanded="true" />
-                <element signature="e#2150#2151#0" expanded="true" />
-                <element signature="e#2177#2178#0" expanded="true" />
-                <element signature="e#2225#2226#0" expanded="true" />
-                <element signature="e#2252#2253#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="pom.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/pom.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="442">
-              <caret line="26" column="0" lean-forward="false" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="application.properties" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/resources/application.properties">
           <provider selected="true" editor-type-id="text-editor">
@@ -185,20 +97,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="UserService.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/mitya/service/UserService.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="221">
-              <caret line="18" column="0" lean-forward="false" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
-              <folding>
-                <element signature="e#438#439#0" expanded="true" />
-                <element signature="e#475#476#0" expanded="true" />
-                <element signature="e#511#512#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="SimpleController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/mitya/controller/SimpleController.java">
           <provider selected="true" editor-type-id="text-editor">
@@ -209,11 +107,51 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="user" pinned="false" current-in-tab="true">
+      <file leaf-file-name="user" pinned="false" current-in-tab="false">
         <entry file="das://table:/ceb73a93/3ac03422-b8ac-4b46-b5de-257c178af7fc/users.user">
           <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
             <state>
               <filtering enabled="true" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="application.properties" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/target/classes/application.properties">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="addUser.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/target/classes/templates/addUser.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="update.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/target/classes/templates/update.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="users_all.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/target/classes/templates/users_all.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-373">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -739,7 +677,7 @@
       <workItem from="1526727337351" duration="19042000" />
       <workItem from="1526820745744" duration="977000" />
       <workItem from="1526824182053" duration="12463000" />
-      <workItem from="1526851052386" duration="41000" />
+      <workItem from="1526851052386" duration="148000" />
     </task>
     <task id="LOCAL-00001" summary="second spring crud">
       <created>1525871150693</created>
@@ -762,11 +700,18 @@
       <option name="project" value="LOCAL" />
       <updated>1526330372610</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="spring boot + thymeleaf + security from computer">
+      <created>1526851143461</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1526851143461</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="280680000" />
+    <option name="totallyTimeSpent" value="280787000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -826,7 +771,8 @@
     <MESSAGE value="second spring crud" />
     <MESSAGE value="spring boot + thymeleaf" />
     <MESSAGE value="spring boot + thymeleaf + security" />
-    <option name="LAST_COMMIT_MESSAGE" value="spring boot + thymeleaf + security" />
+    <MESSAGE value="spring boot + thymeleaf + security from computer" />
+    <option name="LAST_COMMIT_MESSAGE" value="spring boot + thymeleaf + security from computer" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -923,28 +869,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-aop/5.0.5.RELEASE/spring-aop-5.0.5.RELEASE.jar!/org/springframework/aop/framework/CglibAopProxy.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="96">
-          <caret line="468" column="0" lean-forward="false" selection-start-line="468" selection-start-column="0" selection-end-line="468" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/mitya/exception/DbException.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="7" column="0" lean-forward="true" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/mitya/encoder/FlasherPasswordEncoder.java" />
-    <entry file="jar://$MAVEN_REPOSITORY$/org/hibernate/javax/persistence/hibernate-jpa-2.1-api/1.0.0.Final/hibernate-jpa-2.1-api-1.0.0.Final-sources.jar!/javax/persistence/UniqueConstraint.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="35" column="18" lean-forward="false" selection-start-line="35" selection-start-column="18" selection-end-line="35" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/boot/spring-boot-autoconfigure/2.0.1.RELEASE/spring-boot-autoconfigure-2.0.1.RELEASE.jar!/org/springframework/boot/autoconfigure/orm/jpa/JpaBaseConfiguration.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="191">
@@ -1089,6 +1013,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
           <caret line="7" column="27" lean-forward="false" selection-start-line="7" selection-start-column="27" selection-end-line="7" selection-end-column="27" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1104,6 +1029,10 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-19">
           <caret line="9" column="13" lean-forward="false" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+          <folding>
+            <element signature="e#570#571#0" expanded="false" />
+            <element signature="e#597#598#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1111,6 +1040,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="136">
           <caret line="13" column="5" lean-forward="false" selection-start-line="13" selection-start-column="5" selection-end-line="13" selection-end-column="5" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1118,6 +1048,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
           <caret line="6" column="33" lean-forward="false" selection-start-line="6" selection-start-column="33" selection-end-line="6" selection-end-column="33" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1125,6 +1056,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="136">
           <caret line="10" column="9" lean-forward="false" selection-start-line="10" selection-start-column="9" selection-end-line="10" selection-end-column="9" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1132,6 +1064,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="238">
           <caret line="24" column="13" lean-forward="false" selection-start-line="24" selection-start-column="13" selection-end-line="24" selection-end-column="13" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1154,6 +1087,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="407">
           <caret line="38" column="76" lean-forward="false" selection-start-line="38" selection-start-column="76" selection-end-line="38" selection-end-column="76" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1250,6 +1184,38 @@
       <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
         <state>
           <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/target/classes/application.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/target/classes/templates/addUser.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/target/classes/templates/update.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/target/classes/templates/users_all.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-373">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
