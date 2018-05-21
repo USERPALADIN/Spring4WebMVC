@@ -3,7 +3,6 @@ package com.mitya.model;
 import org.springframework.security.core.GrantedAuthority;
 
 import javax.persistence.*;
-import java.util.Collection;
 
 @Entity
 @Table(name = "role")
@@ -17,12 +16,19 @@ public class Role implements GrantedAuthority {
 
     public Role() {
     }
+
     public Role(String name) {
         this.name = name;
     }
+
+    public long getId() {
+        return id;
+    }
+
     public String getName() {
         return name;
     }
+
 
     @Override
     public String getAuthority() {

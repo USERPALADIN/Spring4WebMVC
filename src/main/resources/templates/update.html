@@ -30,14 +30,16 @@
                                   th:value="${user.password}"/> <br/></td>
         </tr>
         <tr>
-            <td th:each="role : ${user.roles}">
-                Role: <select name="role" th:text="${role.getName()}">
-            </select>
-                <!--Role : <select type="text" name="role">-->
-                <!--&lt;!&ndash;<option><c:out value="${user.role}"/></option>&ndash;&gt;-->
-                <!--<option>th:text="${role.getName()}"</option>-->
-                <!--<option>ROLE_ADMIN</option>-->
-                <!--</select>-->
+            <td>
+
+                Role :
+                <select  name="roles" multiple = multiple>
+                    <option th:each="roleFromDB : ${allRoles}"
+                        th:selected="${user.roles.contains(roleFromDB)}"
+                        th:value ="${roleFromDB.name}"
+                            th:text="${roleFromDB.name}"></option>
+                </select>
+                <!--th:atr="${user.roles.contains(roleFromDB) ? 'selected' : ''}"-->
             </td>
         </tr>
     </table>

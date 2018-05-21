@@ -1,46 +1,23 @@
 package com.mitya.service;
 
-import com.mitya.dao.UserDao;
 import com.mitya.model.User;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
 
 import java.util.List;
 
-//import org.springframework.transaction.annotation.Transactional;
+public interface UserService {
 
-@Service
-public class UserService {
-    @Autowired
-    private UserDao userDao;
+     void delete(long id);
 
-
-    public void delete(long id) {
-        userDao.delete(id);
-    }
-
-    public void insert(User user) {
-        userDao.insert(user);
-    }
+     void insert(User user);
 
 
-    public void update(User user) {
-        userDao.update(user);
-    }
+     void update(User user);
 
 
-    public List<User> getAll() {
-        List<User> users = userDao.getAll();
-        return users;
-    }
+     List<User> getAll();
 
-    public User getById(long id) {
-        User user = userDao.getById(id);
-        return user;
-    }
+     User getById(long id) ;
 
-    public User getByLogin(String login) {
-        User user = userDao.getByLogin(login);
-        return user;
-    }
+     User getByLogin(String login) ;
+
 }

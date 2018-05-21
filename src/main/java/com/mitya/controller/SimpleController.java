@@ -2,7 +2,7 @@ package com.mitya.controller;
 
 import com.mitya.model.Role;
 import com.mitya.model.User;
-import com.mitya.service.RoleService;
+import com.mitya.service.RoleServiceImpl;
 import com.mitya.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -13,8 +13,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.ArrayList;
 import java.util.Collection;
-import java.util.HashSet;
-import java.util.Set;
 
 @Controller
 
@@ -22,7 +20,7 @@ public class SimpleController {
     @Autowired
     private UserService userService;
     @Autowired
-    private RoleService roleService;
+    private RoleServiceImpl roleServiceImpl;
 
     @RequestMapping(value = "/user", method = RequestMethod.GET)
     String helloGet(Model model) {
@@ -43,9 +41,9 @@ public class SimpleController {
     @RequestMapping(value = "/insert_user", method = RequestMethod.POST)
     public String insertPost(@RequestParam("name") String name,
                              @RequestParam("login") String login, @RequestParam("password") String password) {
-        String name_Role = "ROLE_ADMIN";
+        String name_Role = "ROLE_USER";
         Collection<Role> roles = new ArrayList<>();
-        Role role =  roleService.getByName(name_Role);
+        Role role =  roleServiceImpl.getByName(name_Role);
         roles.add(role);
         User user = new User(name, login, password, roles);
 

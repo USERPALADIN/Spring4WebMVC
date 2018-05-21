@@ -17,11 +17,14 @@ public class User  implements UserDetails{
 
     @Column(name = "name")
     private String name;
+
     @Column(name = "login", unique = true)
     private String login;
+
     @Column(name = "password")
     private String password;
-    @ManyToMany (cascade = {CascadeType.ALL, CascadeType.REMOVE}, fetch = FetchType.EAGER)
+
+    @ManyToMany ( cascade =  CascadeType.MERGE, fetch = FetchType.EAGER)
     @JoinTable(
             name = "users_roles",
             joinColumns = @JoinColumn(
