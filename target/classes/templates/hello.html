@@ -1,10 +1,21 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
 <head>
     <title>Hello World!</title>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <link rel="stylesheet"
+          href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
+
+
 </head>
 <body>
-<h1>Hello world! </h1>
-<div><a href="/admin/users_all">Показать пользователей</a> </div>
+<div class="row col-sm-6"
+     style="padding:20px; float: none; margin: 0 auto;">
+<form name action="/admin/users_all" >
+     <h1 class="text-center" > Hello  <span th:text="${#authentication.principal.login}"> </span> </h1>
+    <button  type="submit" class="btn btn-primary btn-block">Show Users</button>
+</form>
+</div>
 </body>
 </html>

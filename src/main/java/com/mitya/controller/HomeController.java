@@ -15,20 +15,20 @@ import java.util.ArrayList;
 import java.util.Collection;
 
 @Controller
-
-public class SimpleController {
+public class HomeController {
     @Autowired
     private UserService userService;
     @Autowired
     private RoleServiceImpl roleServiceImpl;
 
     @RequestMapping(value = "/user", method = RequestMethod.GET)
-    String helloGet(Model model) {
+    String helloGet( ) {
         return "hello";
     }
 
     @RequestMapping(value = "/login", method = RequestMethod.GET)
-    String loginGet() {
+    String loginGet(Model model)
+    {
         return "login";
     }
 
