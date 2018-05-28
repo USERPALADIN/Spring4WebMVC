@@ -1,9 +1,11 @@
 package com.mitya.dao;
 
+import com.mitya.exception.DbException;
 import com.mitya.model.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
+import org.springframework.security.authentication.InternalAuthenticationServiceException;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Repository;
@@ -11,6 +13,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import javax.persistence.Query;
 import java.util.List;
 
 @Repository
@@ -19,12 +22,15 @@ import java.util.List;
 public class UserDaoImpl implements UserDao {
     @PersistenceContext
     private EntityManager entityManager;
+    private final PasswordEncoder passwordEncoder;
+
     @Autowired
-    private PasswordEncoder passwordEncoder;
+    public UserDaoImpl(PasswordEncoder passwordEncoder) {
+        this.passwordEncoder = passwordEncoder;
+    }
 
     @Override
     public void delete(long id) {
-
         User user = entityManager.find(User.class, id);
         entityManager.remove(user);
     }
@@ -53,9 +59,13 @@ public class UserDaoImpl implements UserDao {
 
     @Override
     public User getByLogin(String login) {
-        List<User> users = entityManager.createQuery("SELECT e FROM User e  WHERE login ='" + login + "'").getResultList();
-
-        return users.get(0);
+        User user ;
+        try {
+          Query  query = entityManager.createQuery("SELECT e FROM User e  WHERE login ='" + login + "'");
+            user = (User) query.getSingleResult();
+        } catch (Throwable   e) {
+            return null;
+        }
+        return user;
     }
-
 }

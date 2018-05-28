@@ -9,8 +9,13 @@ import java.util.Collection;
 
 @Service
 public class RoleServiceImpl implements RoleService {
-    @Autowired
+    final
     RoleDao roleDao;
+
+    @Autowired
+    public RoleServiceImpl(RoleDao roleDao) {
+        this.roleDao = roleDao;
+    }
 
     public void insert(Role role) {
         roleDao.insert(role);

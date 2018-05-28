@@ -1,6 +1,7 @@
 package com.mitya.service;
 
 import com.mitya.dao.UserDao;
+import com.mitya.exception.DbException;
 import com.mitya.model.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -11,8 +12,12 @@ import java.util.List;
 
 @Service
 public class UserServiceImpl  implements  UserService{
+    private final UserDao userDao;
+
     @Autowired
-    private UserDao userDao;
+    public UserServiceImpl(UserDao userDao) {
+        this.userDao = userDao;
+    }
 
 
     public void delete(long id) {
@@ -40,7 +45,8 @@ public class UserServiceImpl  implements  UserService{
     }
 
     public User getByLogin(String login) {
-        User user = userDao.getByLogin(login);
+        User  user = userDao.getByLogin(login);
+
         return user;
     }
 }

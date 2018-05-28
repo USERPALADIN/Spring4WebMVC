@@ -1,52 +1,130 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=EUC-KR"/>
     <title>Show All Users</title>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <link rel="stylesheet"
+          href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+    <!--<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">-->
+    <link rel="stylesheet" type="text/css" href="../static/css/sidebar.css" />
+
+
 </head>
 <body>
+<div>
+    <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="#">Project</a>
+            </div>
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="/logout">Log out</a></li>
+            </ul>
+        </div>
+    </nav>
+</div>
+<nav class="navbar navbar-default sidebar" role="navigation" >
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-sidebar-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+        </div>
+        <div class="collapse navbar-collapse" id="bs-sidebar-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+                <li class="active"><a href="#">Home<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-home"></span></a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Usuarios <span class="caret"></span><span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-user"></span></a>
+                    <ul class="dropdown-menu forAnimate" role="menu">
+                        <li><a href="{{URL::to('createusuario')}}">Crear</a></li>
+                        <li><a href="#">Modificar</a></li>
+                        <li><a href="#">Reportar</a></li>
+                        <li class="divider"></li>
+                        <li><a href="#">Separated link</a></li>
+                        <li class="divider"></li>
+                        <li><a href="#">Informes</a></li>
+                    </ul>
+                </li>
+                <li ><a href="#">Libros<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-th-list"></span></a></li>
+                <li ><a href="#">Tags<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-tags"></span></a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<!-- Sidebar -->
+<!--<div class="w3-sidebar w3-light-grey w3-bar-block" style="width:25%">-->
+    <!--<h3 class="w3-bar-item">Menu</h3>-->
+    <!--<a href="#" class="w3-bar-item w3-button">Link 1</a>-->
+    <!--<a href="#" class="w3-bar-item w3-button">Link 2</a>-->
+    <!--<a href="#" class="w3-bar-item w3-button">Link 3</a>-->
+<!--</div>-->
 
-<table border=1>
-    <thead>
-    <tr>
-        <th>User Id</th>
-        <th>Name</th>
-        <th>Login</th>
-        <th>Password</th>
-        <th>Role</th>
-        <th colspan=2>Action</th>
-    </tr>
-    </thead>
-    <tbody>
-    <!--<c:forEach items="${users}" var="user">-->
-    <!--<tr>-->
-    <!--<td><c:out value="${user.id}"/></td>-->
-    <!--<td><c:out value="${user.name}"/></td>-->
-    <!--<td><c:out value="${user.login}"/></td>-->
-    <!--<td><c:out value="${user.password}"/></td>-->
-    <!--<td><c:out value="${user.role}"/></td>-->
-    <!--<td><a href="/admin/update_user?userId=<c:out value="${user.id}"/>">Update</a></td>-->
-    <!--<td><a href="/admin/delete_user?userId=<c:out value="${user.id}"/>">Delete</a></td>-->
-    <!--</tr>-->
-    <!--</c:forEach>-->
+<div style="margin-left:25%">
+    <table class="table table-striped">
+        <thead>
+        <tr>
+            <th scope="col">Id</th>
+            <th scope="col"> Name</th>
+            <th scope="col">Login</th>
+            <th scope="col">Password</th>
+            <th scope="col">Role</th>
+            <th scope="col" colspan=2>Action</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="user : ${users}">
+            <td th:text="${user.id}">Id</td>
+            <td th:text="${user.name}">Name</td>
+            <td th:text="${user.login}">Login</td>
+            <td th:text="${user.password}">Password</td>
+            <td>
+                <p th:each="userRole : ${user.roles}"
+                   th:text="${userRole.getName()}"></p>
+            </td>
+            <td>
+                <!--<form th:action="@{/admin/update_user/{userId}(userId=${user.id})}">-->
+                    <!--<button type="submit" class="btn btn-primary btn-block">Update</button>-->
+                <!--</form>-->
+                <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Open Modal</button>
+            </td>
+            <td>
+                <form th:action="@{/admin/delete_user/{userId} (userId =${user.id})}">
+                    <button type="submit" class="btn btn-primary btn-block">Delete</button>
+                </form>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+    <div id="myModal" class="modal fade" role="dialog">
+        <div class="modal-dialog">
 
-    <tr th:each="user : ${users}">
-        <td th:text="${user.id}">Id</td>
-        <td th:text="${user.name}">Name</td>
-        <td th:text="${user.login}">Login</td>
-        <td th:text="${user.password}">Password</td>
-        <td>
-            <p th:each="userRole : ${user.roles}"
-                    th:text="${userRole.getName()}"></p>
-       </td>
-        <td><a th:href="@{/admin/update_user/{userId}(userId=${user.id})}"><span>Update</span></a></td>
-        <td><a th:href="@{/admin/delete_user/{userId} (userId =${user.id})}"><span>Delete</span></a></td>
-    </tr>
-    </tbody>
-</table>
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Modal Header</h4>
+                </div>
+                <div class="modal-body">
+                    <p>Some text in the modal.</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
 
-<form th:action="@{/logout}" method="post">
-    <input type="submit" value="Sign Out"/>
-</form>
+        </div>
+    </div>
+
+
+    <!--<div class="row col-sm-6"-->
+    <!--style="padding:20px; float: none; margin: 0 auto;">-->
+    <!--<form name action="/user" >-->
+    <!--<button  type="submit" class="btn btn-primary btn-block">User page</button>-->
+    <!--</form>-->
+</div>
 </body>
 </html>

@@ -1,5 +1,6 @@
 package com.mitya.dao;
 
+import com.mitya.exception.DbException;
 import com.mitya.model.User;
 
 import java.util.List;
@@ -15,6 +16,6 @@ public interface UserDao   // extends JpaRepository<User, Long>
     List getAll();
 
     User getById(long id);
-    User getByLogin (String login);
+    User getByLogin (String login) ;
 
 }

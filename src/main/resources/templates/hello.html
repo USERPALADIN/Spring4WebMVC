@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
 <head>
     <title>Hello World!</title>
     <meta charset="utf-8"/>
@@ -12,10 +13,13 @@
 <body>
 <div class="row col-sm-6"
      style="padding:20px; float: none; margin: 0 auto;">
-<form name action="/admin/users_all" >
-     <h1 class="text-center" > Hello  <span th:text="${#authentication.principal.login}"> </span> </h1>
-    <button  type="submit" class="btn btn-primary btn-block">Show Users</button>
-</form>
+
+    <h1 class="text-center"> Hello <span th:text="${#authentication.principal.login}"> </span></h1>
+    <br>
+    <br>
+    <form th:action="@{/logout}" method="post">
+        <button type="submit" class="btn btn-primary btn-block">Log out</button>
+    </form>
 </div>
 </body>
 </html>
