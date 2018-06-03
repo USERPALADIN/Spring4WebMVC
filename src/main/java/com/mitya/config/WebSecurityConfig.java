@@ -30,26 +30,28 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Override
     public void configure(WebSecurity web) throws Exception {
-        web.ignoring().antMatchers(HttpMethod.OPTIONS, "/**");
+        web.ignoring().antMatchers(HttpMethod.OPTIONS, "/css/**");
     }
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http
                 .csrf().disable()
-                .authorizeRequests()
-                .antMatchers("/insert_user", "/hello_user").permitAll()
-                .antMatchers("/admin/**").hasAnyRole("ADMIN")
-                .antMatchers("/user/**").hasAnyRole("USER")
-                .anyRequest().authenticated()
+                    .authorizeRequests()
+                    .antMatchers("/insert_user", "/hello_user").permitAll()
+                    .antMatchers("/admin/**").hasAnyRole("ADMIN")
+                    .antMatchers("/user/**").hasAnyRole("USER")
+                    .anyRequest().authenticated()
                 .and()
-                .formLogin()
-                .loginPage("/login")
-                .permitAll()
-                .successHandler(securityHandler)
+                    .formLogin()
+                    .loginPage("/login")
+                    .permitAll()
+                    .successHandler(securityHandler)
                 .and()
-                .logout()
-                .permitAll();
+                    .logout()
+                    .permitAll()
+                .and()
+                .exceptionHandling().accessDeniedPage("/403");
     }
 
     @Bean

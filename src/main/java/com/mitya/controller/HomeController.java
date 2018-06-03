@@ -22,14 +22,18 @@ public class HomeController {
     private RoleServiceImpl roleServiceImpl;
 
     @RequestMapping(value = "/user", method = RequestMethod.GET)
-    String helloGet( ) {
+    String helloGet() {
         return "hello";
     }
 
     @RequestMapping(value = "/login", method = RequestMethod.GET)
-    String loginGet(Model model)
-    {
+    String loginGet(Model model) {
         return "login";
+    }
+
+    @RequestMapping(value = "/403", method = RequestMethod.GET)
+    String erorForbidden() {
+        return "403";
     }
 
 
@@ -43,7 +47,7 @@ public class HomeController {
                              @RequestParam("login") String login, @RequestParam("password") String password) {
         String name_Role = "ROLE_USER";
         Collection<Role> roles = new ArrayList<>();
-        Role role =  roleServiceImpl.getByName(name_Role);
+        Role role = roleServiceImpl.getByName(name_Role);
         roles.add(role);
         User user = new User(name, login, password, roles);
 

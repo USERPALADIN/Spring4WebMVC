@@ -11,6 +11,11 @@ public class AppInit extends  SpringBootServletInitializer {
     public static void main(String[] args) throws Throwable {
         SpringApplication.run(AppInit.class, args);
     }
+
+
+
+
+
 //    @Override
 //    protected SpringApplicationBuilder configure(SpringApplicationBuilder application) {
 //        return application.sources(AppInit.class);

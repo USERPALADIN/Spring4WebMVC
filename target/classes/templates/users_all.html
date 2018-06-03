@@ -5,126 +5,175 @@
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
     <link rel="stylesheet"
-          href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
-    <!--<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">-->
-    <link rel="stylesheet" type="text/css" href="../static/css/sidebar.css" />
-
+          href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"/>
+    <link th:href="@{/css/aplikasi.css}" type="text/css" rel="stylesheet"/>
+    <link th:href="@{/css/tabs.css}" type="text/css" rel="stylesheet"/>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 
 </head>
 <body>
-<div>
-    <nav class="navbar navbar-inverse">
-        <div class="container-fluid">
-            <div class="navbar-header">
-                <a class="navbar-brand" href="#">Project</a>
-            </div>
-            <ul class="nav navbar-nav navbar-right">
-                <li><a href="/logout">Log out</a></li>
-            </ul>
-        </div>
-    </nav>
-</div>
-<nav class="navbar navbar-default sidebar" role="navigation" >
-    <div class="container-fluid">
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-sidebar-navbar-collapse-1">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-        </div>
-        <div class="collapse navbar-collapse" id="bs-sidebar-navbar-collapse-1">
-            <ul class="nav navbar-nav">
-                <li class="active"><a href="#">Home<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-home"></span></a></li>
-                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Usuarios <span class="caret"></span><span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-user"></span></a>
-                    <ul class="dropdown-menu forAnimate" role="menu">
-                        <li><a href="{{URL::to('createusuario')}}">Crear</a></li>
-                        <li><a href="#">Modificar</a></li>
-                        <li><a href="#">Reportar</a></li>
-                        <li class="divider"></li>
-                        <li><a href="#">Separated link</a></li>
-                        <li class="divider"></li>
-                        <li><a href="#">Informes</a></li>
-                    </ul>
-                </li>
-                <li ><a href="#">Libros<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-th-list"></span></a></li>
-                <li ><a href="#">Tags<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-tags"></span></a></li>
-            </ul>
-        </div>
+<nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+    <a class="navbar-brand" href="#">Dashboard</a>
+    <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+        <ul class="navbar-nav mr-auto">
+        </ul>
+
+        <form th:action="@{/logout}" method="post">
+            <button class="btn btn-secondary my-2 my-sm-0" type="submit">LOGOUT</button>
+        </form>
     </div>
 </nav>
-<!-- Sidebar -->
-<!--<div class="w3-sidebar w3-light-grey w3-bar-block" style="width:25%">-->
-    <!--<h3 class="w3-bar-item">Menu</h3>-->
-    <!--<a href="#" class="w3-bar-item w3-button">Link 1</a>-->
-    <!--<a href="#" class="w3-bar-item w3-button">Link 2</a>-->
-    <!--<a href="#" class="w3-bar-item w3-button">Link 3</a>-->
-<!--</div>-->
+<div class="container-fluid">
+    <div class="row">
+        <nav class="col-sm-3 col-md-2 d-none d-sm-block bg-light sidebar">
+            <ul class="nav nav-pills flex-column">
+                <li class="nav-item"><a class="nav-link active" href="/admin/users_all">Admin
+                    <span class="sr-only">(current)</span>
+                </a></li>
+                <li class="nav-item"><a class="nav-link" href="/user">User</a>
+                </li>
+            </ul>
+        </nav>
+        <!--<main class="col-sm-9 ml-sm-auto col-md-10 pt-3" role="main">-->
 
-<div style="margin-left:25%">
-    <table class="table table-striped">
-        <thead>
-        <tr>
-            <th scope="col">Id</th>
-            <th scope="col"> Name</th>
-            <th scope="col">Login</th>
-            <th scope="col">Password</th>
-            <th scope="col">Role</th>
-            <th scope="col" colspan=2>Action</th>
-        </tr>
-        </thead>
-        <tbody>
-        <tr th:each="user : ${users}">
-            <td th:text="${user.id}">Id</td>
-            <td th:text="${user.name}">Name</td>
-            <td th:text="${user.login}">Login</td>
-            <td th:text="${user.password}">Password</td>
-            <td>
-                <p th:each="userRole : ${user.roles}"
-                   th:text="${userRole.getName()}"></p>
-            </td>
-            <td>
-                <!--<form th:action="@{/admin/update_user/{userId}(userId=${user.id})}">-->
-                    <!--<button type="submit" class="btn btn-primary btn-block">Update</button>-->
-                <!--</form>-->
-                <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Open Modal</button>
-            </td>
-            <td>
-                <form th:action="@{/admin/delete_user/{userId} (userId =${user.id})}">
-                    <button type="submit" class="btn btn-primary btn-block">Delete</button>
-                </form>
-            </td>
-        </tr>
-        </tbody>
-    </table>
-    <div id="myModal" class="modal fade" role="dialog">
-        <div class="modal-dialog">
+        <!--&lt;!&ndash; start content utama &ndash;&gt;-->
+        <!--<div>-->
+        <!--<section layout:fragment="content"></section>-->
+        <!--</div>-->
+        <!--&lt;!&ndash; end content utama &ndash;&gt; </main>-->
+    </div>
+</div>
+<div style="margin-left:18%">
+    <div class="notebook">
+        <input type="radio" name="notebook1" id="notebook1_1" checked>
+        <label for="notebook1_1">Users Table</label>
 
-            <!-- Modal content-->
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal">&times;</button>
-                    <h4 class="modal-title">Modal Header</h4>
-                </div>
-                <div class="modal-body">
-                    <p>Some text in the modal.</p>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                </div>
-            </div>
+        <input type="radio" name="notebook1" id="notebook1_2">
+        <label for="notebook1_2">New User</label>
+        <div>
+            <table class="table table-striped">
+                <thead>
+                <tr>
+                    <th scope="col">Id</th>
+                    <th scope="col"> Name</th>
+                    <th scope="col">Login</th>
+                    <th scope="col">Password</th>
+                    <th scope="col">Role</th>
+                    <th scope="col" colspan=2>Action</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr th:each="user : ${users}">
+                    <td th:text="${user.id}">Id</td>
+                    <td th:text="${user.name}">Name</td>
+                    <td th:text="${user.login}">Login</td>
+                    <td th:text="${user.password}">Password</td>
+                    <td>
+                        <p th:each="userRole : ${user.roles}"
+                           th:text="${userRole.getName()}"></p>
+                    </td>
+                    <td>
+                        <!--<form th:action="@{/admin/update_user/{userId}(userId=${user.id})}">-->
+                        <!--<button type="submit" class="btn btn-primary btn-block">Update</button>-->
+                        <!--</form>-->
+                        <!-- Button trigger modal -->
+                        <a href="#" class="btn btn-primary btn-block" th:id="${user.id}" data-toggle="modal"
+                           data-target="#basicModal">Update
+                        </a>
+                        <div class="modal fade" id="basicModal" tabindex="-1" role="dialog" aria-labelledby="basicModal"
+                             aria-hidden="true">
 
+                            <div class="modal-dialog">
+
+                                <div class="modal-content">
+
+                                    <div class="modal-header">
+
+                                        <h4 class="modal-title" id="myModalLabel">Update User </h4>
+
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+
+                                            <span aria-hidden="true">×</span>
+
+                                        </button>
+
+                                    </div>
+
+                                    <div class="modal-body">
+
+                                        <form action="/admin/update_user" method="post">
+                                            <div class="form group">
+                                                <label for="userId">Id:</label>
+                                                <input type="text" class="form-control" id="userId" readonly="readonly"
+                                                       name="userId" th:value="${user.id}"/>
+                                            </div>
+
+                                            <div class="form-group">
+                                                <label for="name"> Name: </label>
+                                                <input type="text" class="form-control" id="name" name="name"
+                                                       th:value="${user.name}"/>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="login">Login: </label>
+                                                <input type="text" class="form-control" id="login" name="login"
+                                                       th:value="${user.login}"/>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="password">Password: </label>
+                                                <input type="password" class="form-control" id="password"
+                                                       name="password"
+                                                       th:value="${user.password}"/>
+                                            </div>
+                                            <div>
+                                                <select id="roles" name="roles" multiple=multiple>
+                                                    <option th:each="roleFromDB : ${allRoles}"
+                                                            th:selected="${user.roles.contains(roleFromDB)}"
+                                                            th:value="${roleFromDB.name}"
+                                                            th:text="${roleFromDB.name}"></option>
+                                                </select>
+                                            </div>
+                                            <button type="submit" class="btn btn-primary btn-block">Add</button>
+                                        </form>
+                                    </div>
+
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-default" data-dismiss="modal">Close
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </td>
+                    <td>
+                        <form th:action="@{/admin/delete_user/{userId} (userId =${user.id})}">
+                            <button type="submit" class="btn btn-primary btn-block">Delete</button>
+                        </form>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+        <div>
+            <h5 class="text-center" style="font-size: 25px">New User</h5>
+            <form action="/insert_user" method="post">
+                <div class="form-group">
+                    <label for="name"> Name: </label>
+                    <input type="text" class="form-control" id="name" placeholder="Enter Name" name="name"/>
+                </div>
+                <div class="form-group">
+                    <label for="login">Login: </label>
+                    <input type="text" class="form-control" id="login" placeholder="Enter Login" name="login"/>
+                </div>
+                <div class="form-group">
+                    <label for="password">Password: </label>
+                    <input type="password" class="form-control" id="password" placeholder="Enter Password"
+                           name="password"/>
+                </div>
+                <button type="submit" class="btn btn-primary btn-block">Add</button>
+            </form>
         </div>
     </div>
-
-
-    <!--<div class="row col-sm-6"-->
-    <!--style="padding:20px; float: none; margin: 0 auto;">-->
-    <!--<form name action="/user" >-->
-    <!--<button  type="submit" class="btn btn-primary btn-block">User page</button>-->
-    <!--</form>-->
 </div>
 </body>
 </html>

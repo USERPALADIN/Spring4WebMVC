@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
+<head>
+    <title>403</title>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <link rel="stylesheet"
+          href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"/>
+    <style>
+        body {
+            background-color: #000;
+        }
+        h1 {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+<div style="text-align: center">
+    <h1>ERROR 403! NO ACCESS TO THIS PAGE</h1>
+</div>
+<div style="text-align: center">
+    <form th:action="@{/user}" method="get">
+        <button type="submit" class="btn btn-danger">USER PAGE</button>
+    </form>
+</div>
+</body>
+</html>

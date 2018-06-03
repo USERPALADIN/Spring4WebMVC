@@ -6,20 +6,45 @@
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
     <link rel="stylesheet"
-          href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
-
+          href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"/>
+    <link th:href="@{/css/aplikasi.css}" type="text/css" rel="stylesheet"/>
 
 </head>
 <body>
-<div class="row col-sm-6"
-     style="padding:20px; float: none; margin: 0 auto;">
+<nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+    <a class="navbar-brand" href="#">Dashboard</a>
+    <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+        <ul class="navbar-nav mr-auto">
+        </ul>
+
+        <form th:action="@{/logout}" method="post">
+            <button class="btn btn-secondary my-2 my-sm-0" type="submit">LOGOUT</button>
+        </form>
+    </div>
+</nav>
+<div class="container-fluid">
+    <div class="row">
+        <nav class="col-sm-3 col-md-2 d-none d-sm-block bg-light sidebar">
+            <ul class="nav nav-pills flex-column">
+                <li class="nav-item"><a class="nav-link" href="/admin/users_all">Admin
+                </a></li>
+                <li class="nav-item"><a class="nav-link active"  href="/user">User</a>
+                    <span class="sr-only">(current)</span>
+                </li>
+            </ul>
+        </nav>
+        <!--<main class="col-sm-9 ml-sm-auto col-md-10 pt-3" role="main">-->
+
+        <!--&lt;!&ndash; start content utama &ndash;&gt;-->
+        <!--<div>-->
+        <!--<section layout:fragment="content"></section>-->
+        <!--</div>-->
+        <!--&lt;!&ndash; end content utama &ndash;&gt; </main>-->
+    </div>
+</div>
+<div style="margin-left: 18%" class="row col-sm-6">
 
     <h1 class="text-center"> Hello <span th:text="${#authentication.principal.login}"> </span></h1>
-    <br>
-    <br>
-    <form th:action="@{/logout}" method="post">
-        <button type="submit" class="btn btn-primary btn-block">Log out</button>
-    </form>
 </div>
 </body>
 </html>
