@@ -28,6 +28,7 @@ public class AdminController {
     @RequestMapping(value = "/users_all", method = RequestMethod.GET)
     public String showUsers(Model model) {
         model.addAttribute("users", userService.getAll());
+        model.addAttribute("allRoles", roleService.getByRoleAll());
         return "users_all";
     }
 

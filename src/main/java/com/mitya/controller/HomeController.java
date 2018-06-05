@@ -31,10 +31,7 @@ public class HomeController {
         return "login";
     }
 
-    @RequestMapping(value = "/403", method = RequestMethod.GET)
-    String erorForbidden() {
-        return "403";
-    }
+
 
 
     @RequestMapping(value = "/insert_user", method = RequestMethod.GET)

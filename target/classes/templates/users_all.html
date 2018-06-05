@@ -79,9 +79,9 @@
                         <!--</form>-->
                         <!-- Button trigger modal -->
                         <a href="#" class="btn btn-primary btn-block" th:id="${user.id}" data-toggle="modal"
-                           data-target="#basicModal">Update
+                          th:attr = "data-target='#'+${user}">Update
                         </a>
-                        <div class="modal fade" id="basicModal" tabindex="-1" role="dialog" aria-labelledby="basicModal"
+                        <div class="modal fade" th:attr="id=${user}" tabindex="-1" role="dialog" aria-labelledby="basicModal"
                              aria-hidden="true">
 
                             <div class="modal-dialog">
