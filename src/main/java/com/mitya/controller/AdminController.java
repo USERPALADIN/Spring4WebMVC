@@ -5,6 +5,8 @@ import com.mitya.model.User;
 import com.mitya.service.RoleService;
 import com.mitya.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -33,7 +35,6 @@ public class AdminController {
     }
 
 
-
     @RequestMapping(value = "/delete_user/{userId}", method = RequestMethod.GET)
     public String deleteGer(@PathVariable("userId") long id) {
         userService.delete(id);
@@ -55,11 +56,17 @@ public class AdminController {
         List<Role> resultRoles = new ArrayList<>();
         for (int i = 0; i < roles.size(); i++) {
             Role role = roleService.getByName(roles.get(i).getName());
-                resultRoles.add(role);
+            resultRoles.add(role);
         }
         User user = new User(name, login, password, resultRoles);
         user.setId(id);
         userService.update(user);
+
+//        SecurityContextHolder.getContext()
+//                .setAuthentication(new UsernamePasswordAuthenticationToken(
+//                        SecurityContextHolder.getContext().getAuthentication().getPrincipal(),
+//                        SecurityContextHolder.getContext().getAuthentication().getCredentials(),
+//                        resultRoles));
         return "redirect:/admin/users_all";
     }
 }
