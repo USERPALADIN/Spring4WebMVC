@@ -50,6 +50,7 @@
             <artifactId>spring-boot-devtools</artifactId>
         </dependency>
 
+
         <!--Security-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -70,11 +71,7 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-data-jpa</artifactId>
         </dependency>
-        <!--<dependency>-->
-        <!--<groupId>javax.transaction</groupId>-->
-        <!--<artifactId>jta</artifactId>-->
-        <!--<version>1.1</version>-->
-        <!--</dependency>-->
+
         <dependency>
             <groupId>org.hibernate</groupId>
             <artifactId>hibernate-entitymanager</artifactId>
@@ -88,12 +85,27 @@
         </dependency>
 
         <dependency>
+            <groupId>com.github.scribejava</groupId>
+            <artifactId>scribejava-apis</artifactId>
+            <version>5.5.0</version>
+        </dependency>
+        <dependency>
+            <groupId>com.github.scribejava</groupId>
+            <artifactId>scribejava-core</artifactId>
+            <version>5.5.0</version>
+        </dependency>
+
+        <dependency>
             <groupId>org.webjars</groupId>
             <artifactId>bootstrap</artifactId>
             <version>3.3.5</version>
         </dependency>
 
-
+        <dependency>
+            <groupId>org.json</groupId>
+            <artifactId>json</artifactId>
+            <version>20160810</version>
+        </dependency>
     </dependencies>
     <build>
         <plugins>
@@ -103,24 +115,6 @@
             </plugin>
         </plugins>
     </build>
-    <!--<build>-->
-    <!--<plugins>-->
-    <!--<plugin>-->
-    <!--<groupId>org.apache.maven.plugins</groupId>-->
-    <!--<artifactId>maven-war-plugin</artifactId>-->
-    <!--<configuration>-->
-    <!--<warName>CRUD-server</warName>-->
-    <!--<failOnMissingWebXml>false</failOnMissingWebXml>-->
-    <!--</configuration>-->
-    <!--</plugin>-->
-    <!--<plugin>-->
-    <!--<artifactId>maven-compiler-plugin</artifactId>-->
-    <!--<configuration>-->
-    <!--<source>${java.version}</source>-->
-    <!--<target>${java.version}</target>-->
-    <!--</configuration>-->
-    <!--</plugin>-->
-    <!--</plugins>-->
-    <!--</build>-->
+
 
 </project>

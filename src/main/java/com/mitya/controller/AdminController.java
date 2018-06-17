@@ -21,11 +21,15 @@ import java.util.List;
 @RequestMapping("/admin")
 public class AdminController {
 
-    @Autowired
-    private UserService userService;
+    private final UserService userService;
+
+    private final RoleService roleService;
 
     @Autowired
-    private RoleService roleService;
+    public AdminController(RoleService roleService, UserService userService) {
+        this.roleService = roleService;
+        this.userService = userService;
+    }
 
     @RequestMapping(value = "/users_all", method = RequestMethod.GET)
     public String showUsers(Model model) {
@@ -34,9 +38,8 @@ public class AdminController {
         return "users_all";
     }
 
-
     @RequestMapping(value = "/delete_user/{userId}", method = RequestMethod.GET)
-    public String deleteGer(@PathVariable("userId") long id) {
+    public String deleteGet(@PathVariable("userId") long id) {
         userService.delete(id);
         return "redirect:/admin/users_all";
     }

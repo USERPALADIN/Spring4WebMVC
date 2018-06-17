@@ -1,5 +1,8 @@
 package com.mitya.model;
 
+//import org.springframework.security.core.GrantedAuthority;
+//import org.springframework.security.core.userdetails.UserDetails;
+
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
@@ -8,7 +11,7 @@ import java.util.Collection;
 
 @Entity
 @Table(name = "user")
-public class User  implements UserDetails{
+public class User  implements UserDetails {
 
     @Id
     @Column(name = "id")
@@ -55,6 +58,18 @@ public class User  implements UserDetails{
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setLogin(String login) {
+        this.login = login;
+    }
+
+    public void setRoles(Collection<Role> roles) {
+        this.roles = roles;
     }
 
     public long getId() {
